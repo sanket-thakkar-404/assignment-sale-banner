@@ -8,7 +8,7 @@
   --accent-hover: #9c4221;
   --bg-badge: #fbece4;
   --text-main: #2d3748; /* Dark Charcoal */
-  --text-muted: #d5c3c1; /* Greyish */
+  --text-muted: #8a7f78; /* Greyish */
   --border-color: #e2e8f0;
   --success-green: #38a169;
   --btn-color: #ff6b00;
@@ -34,42 +34,6 @@ body {
   line-height: 1.5;
 }
 
-/* Header & Nav (Context) */
-.main-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 5rem;
-  padding: 1rem 3rem;
-  background: var(--header-primary-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  padding-left: 5rem;
-  letter-spacing: -0.025em;
-  color: var(--text-main);
-}
-
-nav a {
-  margin: 0 1rem;
-  margin-left: 1rem;
-  text-decoration: none;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-
-.user-actions span {
-  margin-left: 1rem;
-  font-size: 0.875rem;
-  color: var(--text-main);
-}
 
 /* Product Hero (Context) */
 .product-hero {
@@ -150,45 +114,78 @@ nav a:hover {
 }
 
 .sales-banner-container {
-  background-color: var(--banner-bg);
-  border: 1px solid #eaddd5;
-  border-radius: 12px;
-  overflow: hidden;
+  height: 550px;
   position: relative;
+  overflow: hidden;
+  border-radius: 12px;
   box-shadow: var(--shadow-md);
-  margin-bottom: 2rem;
+}
+.sales-banner-container::before {
+  content: "";
+  height: 300px;
+  position: absolute;
+  inset: 0;
+  background: url("https://theobesitykiller.com/cdn/shop/files/Hero_25_Nov_1_2048x.webp?v=1766510104")
+    center/cover no-repeat;
+  transform: scale(1.1); /* edges cut na ho */
+  z-index: -10;
 }
 
 .banner-content {
   display: flex;
+  z-index: 10;
+  align-items: end;
+  justify-content: center;
   flex-wrap: wrap; /* Responsive wrap */
-  gap: 2rem;
   padding: 2rem;
 }
 
 .banner-left {
+  position: absolute;
+  padding: 1rem;
   flex: 1;
-  min-width: 300px;
+  font-weight: bold;
+  bottom: 20px;
+  left: 0px;
 }
 
 .banner-right {
+  bottom: 100px;
+  right: 10px;
+  align-items: center;
+  position : absolute;
+  width: fit-content;
+  background-color: var(--banner-bg);
+  padding: 2rem;
   flex: 1;
-  min-width: 300px;
+  min-width: 410px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-around;
   gap: 1.5rem;
   border-left: 1px solid rgba(0, 0, 0, 0.05);
-  padding-left: 2rem;
 }
 
 /* Mobile: remove border and padding */
 @media (max-width: 768px) {
+  .banner-left{
+    bottom: 10px;
+  }
   .banner-right {
     border-left: none;
-    padding-left: 0;
+    min-width: 50px;
+    min-height: 20px;
+    position: absolute;
+    flex-direction:column;
+    bottom: 230px;
+    right: -10px;
+    font-size: 1em;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding-top: 1.5rem;
+  }
+  .cta-button{
+    display: none;
   }
 }
 
@@ -283,7 +280,7 @@ nav a:hover {
 
 .time-val {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #4a3b32;
   line-height: 1;
 }

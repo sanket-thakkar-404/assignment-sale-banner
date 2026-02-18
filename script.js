@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const CONFIG = {
         saleDurationHours: 24, // Reset every 24 hours
         initialOrders: 120,    // Starting "base" orders
-        maxOrderJump: 4,       // Max increment per update
+        maxOrderJump: 8,       // Max increment per update
         totalStock: 500,
         updateIntervalMin: 3000,  // ms
         updateIntervalMax: 8000,  // ms,
