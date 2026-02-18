@@ -45,7 +45,7 @@ It combines a **countdown timer, coupon copy system, live order simulation, stoc
 ---
 
 ### 3. Order Simulation Engine
-**Purpose:** Displays social proof such as “124 orders placed recently”.
+**Purpose:** Demo / simulated data for UI demonstration.
 
 **Logic:**
 - Orders stored in `localStorage`
@@ -143,6 +143,8 @@ const CONFIG = {
 - `aria-label` on copy button
 - Clear typography and color contrast
 - Hover and active button states
+- Keyboard navigation support
+- Screen reader friendly labelsgit 
 
 ---
 
@@ -171,4 +173,4 @@ const CONFIG = {
 ---
 
 ## Conclusion
-This Flash Sales Banner works as a **conversion‑focused micro‑system**, combining urgency, scarcity, and social proof with lightweight front‑end engineering. It is fast, reusable, and easily extendable for real‑world e‑commerce platforms.
+This Flash Sales Banner works as a **This Flash Sales Banner is designed to improve engagement and urgency signals**, combining urgency, scarcity, and social proof with lightweight front‑end engineering. It is fast, reusable, and easily extendable for real‑world e‑commerce platforms.
