@@ -3,167 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ayurvedic Sales Countdown Banner</title>
+    <title>E-commerce Sales Banner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #ffffff; /* Beige background */
-        margin: 0;
-        padding: 20px;
-        color: #3e2723; /* Dark brown text */
-      }
-      .sale-logo {
-        margin-bottom: 15px;
-        animation: pulse 1.5s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.08);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      .banner {
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: #fef9f4;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        animation: fadeIn 1s ease-in-out;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .left-section {
-        flex: 1;
-        min-width: 300px;
-        text-align: center;
-      }
-      .sale-badge {
-        background-color: #560e06; /* Golden highlight */
-        color: #fff; /* Deep maroon */
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-weight: medium;
-        font-size: 1.2em;
-        display: inline-block;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .urgency-slogan {
-        font-size: 1.5em;
-        color: #800000; /* Deep maroon */
-        margin-bottom: 20px;
-      }
-      .coupon-box {
-        border: 2px dashed #ffa500; /* Orange accent */
-        padding: 15px;
-        border-radius: 10px;
-        background-color: #fff;
-        margin-bottom: 20px;
-        font-weight: bold;
-        color: #3e2723;
-      }
-      .countdown {
-        font-size: 2em;
-        color: #800000;
-        margin-bottom: 20px;
-      }
-      .orders-remaining {
-        font-size: 1.2em;
-        color: #3e2723;
-      }
-      .right-section {
-        flex: 1;
-        min-width: 300px;
-        text-align: center;
-      }
-      .chart-container {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-      @media (max-width: 768px) {
-        .banner {
-          flex-direction: column;
-          text-align: center;
-        }
-        .left-section,
-        .right-section {
-          flex: none;
-          width: 100%;
-        }
-      }
-    </style> -->
-    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="banner">
-      <div class="left-section">
-        <div class="stock">
-          <div class="sale-badge"><i class="ri-time-line time"></i> Limited Time Sale!</div>
-          <div class="sale-logo">
-            <h2 class="discount-number">10<span class="">%</span>OFF</h2>
-          </div>
-          <div class="urgency-slogan">
-            Hurry! Ayurvedic Wellness Products at Unbeatable Prices!
-          </div>
-          <div class="coupon-box" id="couponBox">
-            Coupon Code: <span id="couponText">AYUR10</span>
-          </div>
-          <div class="countdown" id="countdown">00:00:00</div>
-          <div class="orders-remaining">
-            Orders Remaining: <span id="orders">500</span>
+    
+    <main>
+      <!-- Product Context (Simplified) -->
+      <section class="product-hero">
+        <div class="banner-badge">
+          <i class="ri-flashlight-line icon"></i>
+          <span>FLASH SALE — LIMITED TIME</span>
+        </div>
+
+        <h1 class="main-title">
+          Don't Miss Out.<br />
+          <span class="highlight-text">Save 20% Today.</span>
+        </h1>
+      </section>
+
+      <!-- SALES BANNER COMPONENT -->
+      <section class="sales-banner-section">
+        <div class="sales-banner-container" id="sales-banner">
+          <div class="banner-content">
+            <div class="banner-left">
+              <div class="sale-badge">FLASH SALE</div>
+              <h2 class="sale-slogan">Limited Time Offer: Get 20% Off!</h2>
+              <p class="sale-subtext">
+                Don't miss out on our biggest seasonal discount.
+              </p>
+
+              <div class="coupon-wrapper">
+                <span class="coupon-code" id="coupon-code">AYUR20</span>
+                <button
+                  class="copy-btn"
+                  id="copy-btn"
+                  aria-label="Copy Coupon Code"
+                >
+                  COPY
+                </button>
+              </div>
+            </div>
+
+            <div class="banner-right">
+              <div class="timer-wrapper">
+                <span class="timer-label">Ends in:</span>
+                <div class="countdown" id="countdown">
+                  <div class="time-block">
+                    <span class="time-val" id="days">00</span>
+                    <span class="time-unit">Days</span>
+                  </div>
+                  <span class="separator">:</span>
+                  <div class="time-block">
+                    <span class="time-val" id="hours">00</span>
+                    <span class="time-unit">Hrs</span>
+                  </div>
+                  <span class="separator">:</span>
+                  <div class="time-block">
+                    <span class="time-val" id="minutes">00</span>
+                    <span class="time-unit">Mins</span>
+                  </div>
+                  <span class="separator">:</span>
+                  <div class="time-block">
+                    <span class="time-val" id="seconds">00</span>
+                    <span class="time-unit">Secs</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stock-status">
+                <p class="orders-text order-placed">
+                  <span id="orders-count">124</span> orders placed recently!
+                </p>
+                <div class="stock-bar-bg">
+                  <div class="stock-bar-fill" id="stock-bar"></div>
+                </div>
+                <p class="orders-text">
+                  Only <span id="orders-remaining">376</span> left in stock
+                </p>
+              </div>
+
+              <button class="cta-button" id="buy-now-btn">Buy Now</button>
+            </div>
           </div>
         </div>
-        <div class="out-stock" id="hidden">
-          <div class="sale-badge ended">Sale Ended</div>
 
-          <h2 class="discount-number ended-text">0% OFF</h2>
-
-          <div class="urgency-slogan ended-slogan">
-            This Offer is No Longer Available
+        <!-- Analytics Chart Section (Below Banner) -->
+        <div class="analytics-wrapper">
+          <h3>Live Sales Trend</h3>
+           <p class="chart-subtitle">Time vs Orders Purchased</p>
+          <div class="chart-container">
+            <canvas id="salesChart"></canvas>
           </div>
-
-          <div class="coupon-box disabled">Coupon Expired</div>
-
-          <div class="countdown ended-timer">00:00:00</div>
-
-          <div class="orders-remaining soldout">Out of Stock</div>
-
-          <button class="notify-btn">Notify Me</button>
+          <p class="chart-caption">Real-time order volume simulation</p>
         </div>
-        <div id="livePopup" class="popup hidden"></div>
-      </div>
+      </section>
 
-      <div class="right-section">
-        <div class="chart-container">
-          <canvas id="analyticsChart"></canvas>
-        </div>
-      </div>
-    </div>
+      <!-- Product Details (Context) -->
+      <section class="product-details">
+        <p>
+          Rediscover confidence with a natural Ayurvedic solution that works in
+          harmony with your body. Pure herbs, proven results, and a routine so
+          simple it fits into everyday life.
+        </p>
+      </section>
+    </main>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
